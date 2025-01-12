@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Purchase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .course-container {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .course-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .course-container p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .course-container .buy-now {
+            display: inline-block;
+            background-color: #ff5e57;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .course-container .buy-now:hover {
+            background-color: #e04a45;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="course-container">
+        <h1>Master Project management</h1>
+        <p>Join our all-in-one Project Management course and become a pro at managing stunning Projects. Learn and more!</p>
+        <a href="#" class="buy-now" id="buyNowButton">Buy Now</a>
+        <div class="footer">Secure payments handled by PayU</div>
+    </div>
+
+    <script>
+        const payuLink = "https://v.payu.in/PAYUMN/qITsnvrk3x4c"; // Replace with your actual PayU payment link
+        const buyNowButton = document.getElementById("buyNowButton");
+
+        buyNowButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            // Redirect to the PayU payment link
+            window.location.href = payuLink;
+        });
+
+        // Capture the transaction ID (if any) from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionId = urlParams.get("transaction_id");
+
+        if (transactionId) {
+            console.log("Transaction ID:", transactionId);
+            // You can handle the transaction ID here (e.g., display a message, send to the server, etc.)
+        }
+    </script>
+</body>
+</html>
