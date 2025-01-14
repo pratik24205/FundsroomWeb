@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayU UPI Payment</title>
+</head>
+<body>
+  <h1>PayU UPI Payment Integration</h1>
+  <form action="https://test.payu.in/_payment" method="post">
+    <!-- Merchant Details -->
+    <input type="hidden" name="key" value="Dk3vGe" />
+    <input type="hidden" name="txnid" value="txn123456" />
+    <input type="hidden" name="amount" value="10.00" />
+    <input type="hidden" name="productinfo" value="Internship" />
+    <input type="hidden" name="firstname" value="Fundsroom" />
+    <input type="hidden" name="email" value="fundsroom@example.com" />
+    <input type="hidden" name="phone" value="123456789" />
+
+    <!-- Payment Details -->
+    <input type="hidden" name="surl" value="https://your-success-url.com" />
+    <input type="hidden" name="furl" value="https://your-failure-url.com" />
+
+    <!-- Security Hash -->
+    <input type="hidden" name="hash" value="5027a60a9eaeee725fadc1066a7125a7fa5354e3937cf3ab1ee8a76f81291c3de268aa374bee45908ea509357e0ec3a0634a4ff79a2b7c0436104f1fea2808f4" />
+
+    <button type="submit">Pay Now</button>
+  </form>
+</body>
+</html>
